@@ -11,7 +11,7 @@ CREATE TABLE
   "entries" (
     "id" bigserial PRIMARY KEY,
     "account_id" bigint NOT NULL,
-    "amout" bigint NOT NULL,
+    "amount" bigint NOT NULL,
     "created_at" timestamptz NOT NULL DEFAULT 'now()'
   );
 
@@ -20,7 +20,7 @@ CREATE TABLE
     "id" bigserial PRIMARY KEY,
     "from_accound_id" bigint NOT NULL,
     "to_accound_id" bigint NOT NULL,
-    "amout" bigint NOT NULL,
+    "amount" bigint NOT NULL,
     "created_at" timestamptz NOT NULL DEFAULT 'now()'
   );
 
@@ -34,9 +34,9 @@ CREATE INDEX ON "transfers" ("to_accound_id");
 
 CREATE INDEX ON "transfers" ("from_accound_id", "to_accound_id");
 
-COMMENT ON COLUMN "entries"."amout" IS 'can be negative or positive';
+COMMENT ON COLUMN "entries"."amount" IS 'can be negative or positive';
 
-COMMENT ON COLUMN "transfers"."amout" IS 'it must be positive';
+COMMENT ON COLUMN "transfers"."amount" IS 'it must be positive';
 
 ALTER TABLE
   "entries"

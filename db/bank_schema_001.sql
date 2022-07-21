@@ -11,7 +11,7 @@ CREATE TABLE
   "entries" (
     "id" bigserial PRIMARY KEY,
     "account_id" bigint NOT NULL,
-    "amout" bigint NOT NULL,
+    "amount" bigint NOT NULL,
     "created_at" timestamptz NOT NULL DEFAULT 'now()'
   );
 
@@ -20,7 +20,7 @@ CREATE TABLE
     "id" bigserial PRIMARY KEY,
     "from_accound_id" bigint NOT NULL,
     "to_accound_id" bigint NOT NULL,
-    "amout" bigint NOT NULL,
+    "amount" bigint NOT NULL,
     "created_at" timestamptz NOT NULL DEFAULT 'now()'
   );
 
